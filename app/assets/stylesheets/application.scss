@@ -11,6 +11,8 @@
  * It is generally better to create a new file per style scope.
  *
  *= require bulma
- *= require_tree .
  *= require_self
+ *= require general
+ *= require helpers
+ *= require sessions
  */

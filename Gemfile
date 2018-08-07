@@ -23,6 +23,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem 'haml-rails'
 gem 'figaro'
+gem 'rails-assets-bulma', source: 'https://rails-assets.org'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

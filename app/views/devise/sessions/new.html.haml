@@ -1,0 +1,29 @@
+%h1.title.is-2 Ingresa
+%hr
+
+.has-text-centered
+  = render 'devise/shared/socials'
+
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .field
+    = f.label 'Correo electrónico', class: 'label'
+    .control
+      = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'input'
+
+  .field
+    = f.label 'Contraseña', class: 'label'
+    .control
+      = f.password_field :password, autocomplete: 'off', class: 'input'
+
+  - if devise_mapping.rememberable?
+    .field
+      .control
+      = f.label class: 'checkbox' do
+        = f.check_box :remember_me
+        %span Recuérdame
+
+  .has-text-right
+    = f.submit 'Ingresar', class: 'button is-success is-fullwidth'
+
+  .has-text-centered.big-margin-top
+    = render 'devise/shared/links'

@@ -1,0 +1,8 @@
+- if devise_mapping.omniauthable?
+  - resource_class.omniauth_providers.each do |provider|
+    - case provider.to_s
+      - when "facebook"
+        = link_to omniauth_authorize_path(resource_name, provider), class: "facebook-button" do
+          = fa_icon "facebook"
+          %span.ml10 Ingresa con
+          = OmniAuth::Utils.camelize(provider)

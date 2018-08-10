@@ -1,0 +1,16 @@
+%h1.title.is-2 Olvidaste tu contraseña?
+%hr
+
+= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+  = devise_error_messages!
+
+  .field
+    = f.label 'Correo electrónico', class: 'label'
+    .control
+      = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'input'
+
+  .has-text-right
+    = f.submit 'Envíame instrucciones', class: 'button is-success is-fullwidth'
+
+.has-text-centered.big-margin-top
+  = render 'devise/shared/links'

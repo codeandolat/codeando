@@ -3,3 +3,11 @@ html, body {
   height: 100%;
   width: 100%;
 }
+
+.navbar {
+  box-shadow: 0 0 0 2px rgba(10,10,10,.1);
+
+  .navbar-item img {
+    max-height: 2.75rem;
+  }
+}

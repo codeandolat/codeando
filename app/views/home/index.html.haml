@@ -1,2 +1,10 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+%section.section
+  .container
+    .columns
+      .column.is-two-thirds
+        %h1 Home#index
+        %p Find me in app/views/home/index.html.haml
+      .column
+        .sidebar-title
+          %h2 Follow me
+        = render 'shared/home_sidebar'

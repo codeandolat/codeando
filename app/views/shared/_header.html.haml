@@ -16,7 +16,16 @@
             = link_to root_path do
               = fa_icon 'cog'
         .navbar-item
+          = link_to 'Home', root_path
+        .navbar-item
+          = link_to 'About me', root_path
+        .navbar-item
+          = link_to 'Blog', root_path
+        .navbar-item
+          = link_to 'Contact', root_path
+        .navbar-item
           - if user_signed_in?
-            = link_to 'Salir', destroy_user_session_path, method: :delete
+            = link_to destroy_user_session_path, method: :delete do
+              = fa_icon 'sign-out'
           - else
-            = link_to 'Ingresar', new_user_session_path
+            = link_to 'Login', new_user_session_path

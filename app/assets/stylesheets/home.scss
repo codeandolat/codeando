@@ -1,3 +1,70 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.home-hero {
+  background: image-url('hero.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 75%;
+  overflow: hidden;
+}
+
+.sidebar-title {
+  margin-bottom: 30px;
+  background-color: #e0e0e0;
+
+  h2 {
+    color: #ffffff;
+    padding: 9px 20px;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 1px;
+    display: inline-block;
+    background-color: $fruit-salad;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+.sidebar-social-list {
+  display: flex;
+  justify-content: space-around;
+
+  li {
+    display: inline-block;
+    list-style: none;
+    margin-right: 5px;
+    margin-bottom: 8px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a.social-link {
+    color: white;
+    display: inline-block;
+    font-size: 20px;
+    height: 53px;
+    line-height: 53px;
+    text-align: center;
+    transition: all 0.3s ease;
+    width: 80px;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+
+    &.facebook {
+      background-color: #2f58a1;
+    }
+
+    &.twitter {
+      background-color: #069cd5;
+    }
+
+    &.youtube {
+      background-color: #FF0000;
+    }
+
+    &.linkedin {
+      background-color: #0076b8;
+    }
+  }
+}

@@ -3,34 +3,50 @@
   background-size: cover;
   height: 75%;
   overflow: hidden;
+  position: relative;
+
+  .hero-body {
+    z-index: 2;
+  }
+
+  .background {
+    background: rgba(0, 0, 0, 0.7);
+    bottom: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
 }
 
 .sidebar-title {
   margin-bottom: 30px;
-  background-color: #e0e0e0;
+  background-color: $alto;
 
   h2 {
-    color: #ffffff;
-    padding: 9px 20px;
-    font-weight: 400;
-    font-size: 12px;
-    letter-spacing: 1px;
-    display: inline-block;
     background-color: $fruit-salad;
+    color: white;
+    display: inline-block;
+    font-size: 13px;
+    padding: 9px 20px;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
   }
 }
 
 .sidebar-social-list {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 
   li {
+    border: 2px solid $mine-shaft;
     display: inline-block;
     list-style: none;
-    margin-right: 5px;
     margin-bottom: 8px;
+    margin-right: 5px;
+
+    &:hover {
+      border: 2px solid transparent;
+    }
 
     &:last-child {
       margin-right: 0;
@@ -38,7 +54,7 @@
   }
 
   a.social-link {
-    color: white;
+    color: $mine-shaft;
     display: inline-block;
     font-size: 20px;
     height: 53px;
@@ -51,20 +67,73 @@
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
 
+    &:hover {
+      color: white;
+    }
+
     &.facebook {
-      background-color: #2f58a1;
+      &:hover {
+        background-color: $facebook;
+      }
     }
 
     &.twitter {
-      background-color: #069cd5;
+      &:hover {
+        background-color: $twitter;
+      }
     }
 
     &.youtube {
-      background-color: #FF0000;
+      &:hover {
+        background-color: $youtube;
+      }
+    }
+  }
+}
+
+.sidebar-personal-social-list {
+  li {
+    display: inline-block;
+    margin-right: 5px;
+  }
+
+  a.personal-social-link {
+    border-radius: 100%;
+    border: 1px solid $alto;
+    display: inline-block;
+    height: 45px;
+    line-height: 30px;
+    padding: 6px;
+    text-align: center;
+    transition: all ease .3s;
+    vertical-align: middle;
+    width: 45px;
+
+    &.twitter {
+      color: $twitter;
+
+      &:hover {
+        background-color: $twitter;
+        color: white;
+      }
+    }
+
+    &.github {
+      color: black;
+
+      &:hover {
+        background-color: black;
+        color: white;
+      }
     }
 
     &.linkedin {
-      background-color: #0076b8;
+      color: $linkedin;
+
+      &:hover {
+        background-color: $linkedin;
+        color: white;
+      }
     }
   }
 }

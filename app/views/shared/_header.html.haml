@@ -13,7 +13,7 @@
       .navbar-end
         .navbar-item
           - if user_signed_in? && current_user.admin
-            = link_to root_path do
+            = link_to admin_path do
               = fa_icon 'cog'
         .navbar-item
           = link_to 'Home', root_path

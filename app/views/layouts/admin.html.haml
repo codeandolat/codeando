@@ -3,11 +3,21 @@
   %head
     %meta{content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type'}/
     %meta{name: 'viewport', content: 'width=device-width, initial-scale=1'}/
-    %title Tweety Admin
+    %title Codeando Admin
     = csrf_meta_tags
     = stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'admin', 'data-turbolinks-track': 'reload'
     = favicon_link_tag asset_path('favicon.ico'), :rel => 'icon', :type => "image/x-icon"
   %body
-    %h1 Admin
-    = yield
+    = render 'shared/admin_header'
+    .wrapper
+      .columns
+        %aside.column.is-2.aside
+          = render 'shared/admin_sidebar'
+        %main.column.main
+          - flash.each do |type, message|
+            .notification{ :class => bulma_flash_class[type] || 'is-primary'}
+              %button.delete
+              = message
+              (would like to have a small icon, too).
+          = yield

@@ -1,0 +1,30 @@
+%header
+  %nav.navbar.has-shadow{"aria-label" => "main navigation", :role => "navigation"}
+    .navbar-brand
+      %a.navbar-item(href='/')
+        = image_tag 'codeando-green-logo.png', class: 'navbar-brand-logo', alt: 'Codeando logo'
+      %button.button.navbar-burger{"data-target" => "navMenu"}
+        %span
+        %span
+        %span
+    #navMenu.navbar-menu.navbar-end
+      %a.navbar-item.is-tab.is-hidden-tablet.is-active Home
+      %a.navbar-item.nav-tag
+        %span.icon.is-small
+          %i.fa.fa-envelope-o
+        %span.tag.is-primary.tag-notif 6
+      .navbar-item.has-dropdown.is-hoverable
+        %a.navbar-link
+          %figure.image.is-32x32{:style => "margin-right:.5em;"}
+            %img{:src => "https://avatars1.githubusercontent.com/u/7221389?v=4&s=32"}/
+          David
+        .navbar-dropdown.is-right
+          %a.navbar-item
+            %span.icon.is-small
+              %i.fa.fa-user-o
+            Profile
+          %hr.navbar-divider/
+          %a.navbar-item
+            %span.icon.is-small
+              %i.fa.fa-power-off
+            Logout

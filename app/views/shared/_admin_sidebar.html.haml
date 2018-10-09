@@ -1,0 +1,34 @@
+%nav.menu
+  %p.menu-label
+    General
+  %ul.menu-list
+    %li
+      = link_to admin_path, class: nav_class_if_active('pages#dashboard') do
+        %span.icon.is-small
+          %i.fa.fa-tachometer
+        Dashboard
+  %p.menu-label
+    Administration
+  %ul.menu-list
+    %li
+      = link_to admin_path, class: nav_class_if_active('pages#forms') do
+        %span.icon.is-small
+          %i.fa.fa-users
+        Users
+  %p.menu-label
+    More
+  %ul.menu-list
+    %li
+      %a
+        %span.icon.is-small
+          %i.fa.fa-bug
+        Additional Pages
+      %ul
+        %li
+          = link_to admin_path, class: nav_class_if_active('pages#login') do
+            Login
+        %li
+          = link_to admin_path, class: nav_class_if_active('pages#notifications') do
+            Notification Test
+        %li
+          %a Add a member

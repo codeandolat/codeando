@@ -1,0 +1,16 @@
+toolbar:
+  - styleselect | bold italic underline strikethrough | undo redo | blockquote | numlist | bullist | code | insertdatetime
+  - image | link | fontsizeselect | fullscreen | table | forecolor | backcolor | restoredraft | preview
+menubar:
+  - codeformat
+plugins:
+  - image
+  - link
+  - code
+  - lists
+  - fullscreen
+  - table
+  - textcolor
+  - autosave
+  - preview
+  - insertdatetime

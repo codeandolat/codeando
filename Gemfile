@@ -26,6 +26,7 @@ gem 'figaro'
 gem 'rails-assets-bulma', source: 'https://rails-assets.org'
 gem 'font-awesome-rails'
 gem 'pundit'
+gem 'tinymce-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

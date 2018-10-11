@@ -1,5 +1,6 @@
 //= require rails-ujs
 //= require activestorage
+//= require tinymce
 //= require_tree .
 
 document.addEventListener("DOMContentLoaded", function (event) {

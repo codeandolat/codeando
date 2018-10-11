@@ -1,0 +1,17 @@
+= form_for [:admin, @post] do |f|
+  - if @post.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
+      %ul
+        - @post.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :title, class: 'label'
+    .control
+      = f.text_field :title, class: 'input'
+  .field
+    = f.label :content, class: 'label'
+    .control
+      = f.text_area :content, class: 'textarea', row: 10
+  .has-text-right
+    = f.submit 'Save the post', class: 'button is-success is-medium'

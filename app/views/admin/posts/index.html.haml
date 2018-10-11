@@ -1,0 +1,30 @@
+%h1.title.is-2 Listing posts
+
+%table.table.is-striped.is-fullwidth
+  %thead
+    %tr
+      %th User
+      %th Title
+      %th Created at
+      %th
+      %th
+      %th
+
+  %tbody
+    - @posts.each do |post|
+      %tr
+        %td= post.user.email
+        %td= post.title
+        %td
+          #{time_ago_in_words(post.created_at)} ago
+        %td
+          = link_to [:admin, post] do
+            = fa_icon 'eye'
+        %td
+          = link_to edit_admin_post_path(post) do
+            = fa_icon 'pencil', class: 'has-text-success'
+        %td
+          = link_to [:admin, post], method: :delete, data: { confirm: 'Are you sure?' } do
+            = fa_icon 'trash', class: 'has-text-danger'
+%div
+  = link_to 'New Post', new_admin_post_path, class: 'button is-success'

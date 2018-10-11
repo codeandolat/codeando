@@ -10,14 +10,10 @@
     = favicon_link_tag asset_path('favicon.ico'), :rel => 'icon', :type => "image/x-icon"
   %body
     = render 'shared/admin_header'
-    .wrapper
-      .columns
+    .wrapper.full-height
+      .columns.full-height
         %aside.column.is-2.aside
           = render 'shared/admin_sidebar'
-        %main.column.main
-          - flash.each do |type, message|
-            .notification{ :class => bulma_flash_class[type] || 'is-primary'}
-              %button.delete
-              = message
-              (would like to have a small icon, too).
+        %main.column.main.is-three-quarters
+          = render 'shared/flash_messages'
           = yield

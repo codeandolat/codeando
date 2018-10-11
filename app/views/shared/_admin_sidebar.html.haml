@@ -15,20 +15,20 @@
         %span.icon.is-small
           %i.fa.fa-users
         Users
+    %li
+      = link_to admin_posts_path, class: nav_class_if_active('posts#') do
+        %span.icon.is-small
+          %i.fa.fa-book
+        Posts
   %p.menu-label
     More
   %ul.menu-list
     %li
       %a
         %span.icon.is-small
-          %i.fa.fa-bug
+          %i.fa.fa-cog
         Additional Pages
       %ul
         %li
           = link_to admin_path, class: nav_class_if_active('pages#login') do
-            Login
-        %li
-          = link_to admin_path, class: nav_class_if_active('pages#notifications') do
-            Notification Test
-        %li
-          %a Add a member
+            Exit

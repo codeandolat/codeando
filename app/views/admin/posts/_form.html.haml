@@ -12,6 +12,7 @@
   .field
     = f.label :content, class: 'label'
     .control
-      = f.text_area :content, class: 'textarea', row: 10
+      = f.text_area :content, class: 'textarea tinymce', rows: 10, cols: 120
+      = tinymce
   .has-text-right
     = f.submit 'Save the post', class: 'button is-success is-medium'

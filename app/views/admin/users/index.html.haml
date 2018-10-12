@@ -1,0 +1,18 @@
+%h1.title.is-2 Listing users
+
+%table.table.is-striped.is-fullwidth
+  %thead
+    %tr
+      %th Email
+      %th Admin
+      %th # posts
+      %th Created at
+
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.email
+        %td= user.admin
+        %td= user.posts_count
+        %td
+          #{time_ago_in_words(user.created_at)} ago

@@ -11,7 +11,7 @@
     Administration
   %ul.menu-list
     %li
-      = link_to admin_path, class: nav_class_if_active('pages#forms') do
+      = link_to admin_users_path, class: nav_class_if_active('users#') do
         %span.icon.is-small
           %i.fa.fa-users
         Users
@@ -30,5 +30,5 @@
         Additional Pages
       %ul
         %li
-          = link_to admin_path, class: nav_class_if_active('pages#login') do
+          = link_to destroy_user_session_path, method: :delete, class: nav_class_if_active('pages#login') do
             Exit

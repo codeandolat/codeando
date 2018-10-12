@@ -1,15 +1,7 @@
-%p#notice= notice
-
-%p
-  %b User:
-  = @post.user
-%p
-  %b Title:
-  = @post.title
-%p
-  %b Content:
-= @post.content.html_safe
-
-= link_to 'Edit', edit_admin_post_path(@post)
-\|
-= link_to 'Back', admin_posts_path
+.has-text-right
+  = link_to 'Back', admin_posts_path, class: 'button is-link is-outlined'
+  = link_to 'Edit', edit_admin_post_path(@post), class: 'button is-info is-outlined'
+.has-text-centered
+  %h2.title.is-2= @post.title
+.container.is-fluid
+  = @post.content.html_safe

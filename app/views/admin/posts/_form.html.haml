@@ -9,6 +9,13 @@
     = f.label :title, class: 'label'
     .control
       = f.text_field :title, class: 'input'
+  .file.big-margin-bottom
+    %label.file-label
+      = f.file_field :image, class: 'file-input'
+      %span.file-cta
+        %span.file-icon
+          = fa_icon 'upload'
+        %span.file-label Choose a file…
   .field
     = f.label :content, class: 'label'
     .control

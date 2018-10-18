@@ -1,7 +1,7 @@
 .has-text-right
   = link_to 'Back', admin_posts_path, class: 'button is-link is-outlined'
   = link_to 'Edit', edit_admin_post_path(@post), class: 'button is-info is-outlined'
-.has-text-centered
+.has-text-centered.big-margin-bottom
   %h2.title.is-2= @post.title
 .container.is-fluid
   = @post.content.html_safe

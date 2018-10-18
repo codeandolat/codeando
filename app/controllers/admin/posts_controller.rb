@@ -4,7 +4,7 @@ class Admin::PostsController < Admin::BaseController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.eager_load(:user)
+    @posts = Post.eager_load(:user, image_attachment: :blob)
   end
 
   # GET /posts/1
@@ -69,6 +69,6 @@ class Admin::PostsController < Admin::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:user_id, :title, :content)
+      params.require(:post).permit(:title, :content, :image)
     end
 end

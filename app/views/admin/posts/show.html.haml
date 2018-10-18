@@ -1,7 +1,12 @@
 .has-text-right
   = link_to 'Back', admin_posts_path, class: 'button is-link is-outlined'
   = link_to 'Edit', edit_admin_post_path(@post), class: 'button is-info is-outlined'
-.has-text-centered.big-margin-bottom
-  %h2.title.is-2= @post.title
-.container.is-fluid
+.columns.big-margin-top.post
+  .column.is-6.post-title-container.has-text-left
+    %h2.title.is-2= @post.title
+    %p.subtitle.is-5= @post.subtitle
+  .column.is-6.has-text-right
+    - if @post.image.attached?
+      = image_tag @post.image.variant(resize: "500x400")
+.container.is-marginless.is-fluid.big-margin-top
   = @post.content.html_safe

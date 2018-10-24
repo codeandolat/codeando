@@ -5,8 +5,46 @@
     flex-direction: column;
     justify-content: center;
 
+    .author {
+      align-items: center;
+      width: 100%;
+
+      .image {
+        margin-right: 10px;
+      }
+
+      .info {
+        .date {
+          color: $silver-chalice;
+          font-size: 14px;
+        }
+
+        .name {
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+    }
+
     .title {
       width: 100%;
+    }
+  }
+}
+
+.written-by {
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  .image {
+    margin-bottom: 10px;
+  }
+
+  .info {
+    .name {
+      font-size: 22px;
+      font-weight: bold;
     }
   }
 }

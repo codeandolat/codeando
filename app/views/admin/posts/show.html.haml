@@ -5,8 +5,19 @@
   .column.is-6.post-title-container.has-text-left
     %h2.title.is-2= @post.title
     %p.subtitle.is-5= @post.subtitle
+    .is-flex.author.has-left-text.medium-margin-top
+      %figure.image.is-64x64
+        %img.is-rounded{src: 'https://bulma.io/images/placeholders/64x64.png'}
+      .info
+        %p.name David Sanchez
+        %p.date published #{time_ago_in_words(@post.created_at)} ago
   .column.is-6.has-text-right
     - if @post.image.attached?
       = image_tag @post.image.variant(resize: "500x400")
 .container.is-marginless.is-fluid.big-margin-top
   = @post.content.html_safe
+.is-flex.written-by.big-margin-top.big-margin-bottom.has-text-centered
+  %figure.image.is-128x128
+    %img.is-rounded{src: 'https://bulma.io/images/placeholders/128x128.png'}
+  .info
+    %p.name David Sanchez

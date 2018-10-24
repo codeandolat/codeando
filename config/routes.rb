@@ -7,4 +7,8 @@ Rails.application.routes.draw do
     resources :posts
     resources :users, only: [:index]
   end
+
+  namespace :api, defaults: { format: :json } do
+    resources :posts, only: [:index]
+  end
 end

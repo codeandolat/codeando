@@ -84,6 +84,9 @@ GEM
       railties (>= 3.2, < 6.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    graphiql-rails (1.4.11)
+      railties
+      sprockets-rails
     graphql (1.8.11)
     haml (5.0.4)
       temple (>= 0.8.0)
@@ -241,6 +244,7 @@ DEPENDENCIES
   devise
   figaro
   font-awesome-rails
+  graphiql-rails
   graphql
   haml-rails
   jbuilder (~> 2.5)

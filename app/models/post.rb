@@ -4,5 +4,5 @@ class Post < ApplicationRecord
 
   validates :title, :subtitle, presence: true
 
-  belongs_to :user, counter_cache: true
+  belongs_to :author, class_name: 'User', foreign_key: 'user_id', counter_cache: true
 end

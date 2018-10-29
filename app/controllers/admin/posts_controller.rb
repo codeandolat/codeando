@@ -4,7 +4,7 @@ class Admin::PostsController < Admin::BaseController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.eager_load(:user, image_attachment: :blob)
+    @posts = Post.eager_load(:author, image_attachment: :blob)
   end
 
   # GET /posts/1

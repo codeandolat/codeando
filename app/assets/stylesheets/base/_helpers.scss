@@ -1,11 +1,23 @@
-.medium-margin-top {
-  margin-top: 10px;
+.big-margin-bottom {
+  margin-bottom: 20px;
 }
 
 .big-margin-top {
   margin-top: 20px;
 }
 
-.big-margin-bottom {
-  margin-bottom: 20px;
+.blue-border-top {
+  border-top: 5px solid $dodger-blue;
+}
+
+.green-border-top {
+  border-top: 5px solid $fruit-salad;
+}
+
+.medium-margin-top {
+  margin-top: 10px;
+}
+
+.rounded-borders {
+  border-radius: 5px;
 }

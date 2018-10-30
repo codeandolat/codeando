@@ -2,7 +2,7 @@
   .container
     .columns
       .column.is-two-thirds
-        %h1 Home#index
-        %p Find me in app/views/home/index.html.haml
+        #posts
+        = javascript_pack_tag 'posts'
       .column
         = render 'shared/home_sidebar'

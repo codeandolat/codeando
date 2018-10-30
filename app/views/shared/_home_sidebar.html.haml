@@ -1,33 +1,3 @@
-%ul.sidebar-social-list
-  %li
-    %a.social-link.facebook{href: '/'}
-      = fa_icon 'facebook'
-  %li
-    %a.social-link.twitter{href: '/'}
-      = fa_icon 'twitter'
-  %li
-    %a.social-link.youtube{href: '/'}
-      = fa_icon 'youtube'
+= render 'shared/codeando_info_card'
 
-.card.big-margin-top
-  .card-image
-    %figure.image.is-3by2
-      = image_tag 'me', alt: 'Me'
-  .card-content
-    .has-text-centered
-      %h4.title.is-4 David Sanchez
-      %h6.subtitle.is-6 Software Engineer
-      %p
-        Software developer during the day, human at night.
-      .big-margin-top
-        %h5.title.is-5 Follow me 
-        %ul.sidebar-personal-social-list
-          %li
-            %a.personal-social-link.twitter{href: '/'}
-              = fa_icon 'twitter'
-          %li
-            %a.personal-social-link.github{href: '/'}
-              = fa_icon 'github'
-          %li
-            %a.personal-social-link.linkedin{href: '/'}
-              = fa_icon 'linkedin'
+= render 'shared/personal_info_card'

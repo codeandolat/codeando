@@ -6,8 +6,16 @@
   margin-top: 20px;
 }
 
+.big-blue-border-left {
+  border-left: 8px solid $dodger-blue;
+}
+
 .blue-border-top {
   border-top: 5px solid $dodger-blue;
+}
+
+.big-green-border-left {
+  border-left: 8px solid $fruit-salad;
 }
 
 .green-border-top {
@@ -20,4 +28,8 @@
 
 .rounded-borders {
   border-radius: 5px;
+}
+
+.vertical-center {
+  align-items: center;
 }

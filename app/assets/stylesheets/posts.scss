@@ -1,0 +1,28 @@
+#posts {
+  .post-footer {
+    .post-footer-icons {
+      align-items: center;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .post-footer-item {
+      margin-left: 20px;
+
+      .count {
+        margin-left: 5px;
+      }
+    }
+  }
+
+  .post-header {
+    display: flow-root;
+
+    .post-header-tags {
+      align-items: center;
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 30px;
+    }
+  }
+}

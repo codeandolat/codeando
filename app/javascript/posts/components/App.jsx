@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 
+import PostCard from './PostCard'
+
 class App extends Component {
   render() {
-    return(
-      <h1>My posts</h1>
-    )
+    return <div>
+        <PostCard />
+      </div>;
   }
 }
 export default App

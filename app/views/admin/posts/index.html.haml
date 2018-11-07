@@ -13,7 +13,7 @@
   %tbody
     - @posts.each do |post|
       %tr
-        %td= post.user.email
+        %td= post.author.email
         %td= post.title
         %td
           #{time_ago_in_words(post.created_at)} ago

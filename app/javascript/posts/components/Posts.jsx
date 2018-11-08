@@ -11,6 +11,7 @@ const GET_POSTS = gql`
       id
       title
       subtitle
+      createdAt
       author {
         email
       }

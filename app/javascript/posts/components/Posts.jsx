@@ -3,6 +3,7 @@ import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 
 import PostCard from './PostCard';
+import PostLoading from './PostLoading';
 
 const GET_POSTS = gql`
   {
@@ -21,15 +22,23 @@ const Posts = () => {
   return (
     <Query query={GET_POSTS}>
       {({ loading, error, data: { posts } }) => {
-        if (loading) return "Loading...";
+        if (loading) {
+          return(
+            <div>
+              <PostLoading />
+              <PostLoading />
+              <PostLoading />
+            </div>
+          )
+        }
         if (error) return `Error: ${error.message}`;
   
         return (
-          <ul>
+          <React.Fragment>
             {posts.map(post => (
               <PostCard key={post.id} post={post}/>
             ))}
-          </ul>
+          </React.Fragment>
         );
       }}
     </Query>

@@ -26,3 +26,38 @@
     }
   }
 }
+
+.post-loading {
+  .post-loading-header {
+    background: $alto;
+    border-radius: 20px;
+    padding: 10px;
+    width: 60%;
+  }
+
+  .post-loading-content {
+    background: $alto;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    padding: 5px;
+
+    &.is-40 {
+      width: 40%;
+    }
+
+    &.is-60 {
+      width: 60%;
+    }
+
+    &.is-80 {
+      width: 80%;
+    }
+  }
+
+  .post-loading-button {
+    background: $alto;
+    border-radius: 20px;
+    padding: 18px;
+    width: 15%;
+  }
+}

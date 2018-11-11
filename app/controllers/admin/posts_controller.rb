@@ -69,6 +69,6 @@ class Admin::PostsController < Admin::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :subtitle, :content, :image)
+      params.require(:post).permit(:title, :subtitle, :content, :image, :tag_list)
     end
 end

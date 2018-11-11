@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   acts_as_paranoid
+  acts_as_taggable
   has_one_attached :image
 
   validates :title, :subtitle, presence: true

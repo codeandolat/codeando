@@ -13,7 +13,7 @@ class PostFooter extends Component {
             <span className="count">7</span>
           </div>
           <div className="post-footer-item">
-            <i className="fa fa-heart-o is-size-4"></i>
+            <i className="fa fa-heart is-size-4"></i>
             <span className="count">10</span>
           </div>
         </div>

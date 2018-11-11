@@ -16,8 +16,9 @@ class PostHeader extends Component {
                 </p>
               </div>
               <div className="column is-6 tags post-header-tags">
-                <span className="tag is-rounded">ruby</span>
-                <span className="tag is-rounded">javascript</span>
+                {post.tagList.map(tag => (
+                  <span className="tag is-rounded">{tag}</span>
+                ))}
               </div>
             </div>
           </header>

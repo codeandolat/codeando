@@ -12,6 +12,7 @@ const GET_POSTS = gql`
       title
       subtitle
       createdAt
+      tagList
       author {
         email
       }

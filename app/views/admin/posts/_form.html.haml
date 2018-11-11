@@ -13,6 +13,10 @@
     = f.label :subtitle, class: 'label'
     .control
       = f.text_area :subtitle, class: 'textarea'
+  .field
+    = f.label :tag_list, class: 'label'
+    .control
+      = f.text_field :tag_list, value: f.object.tag_list.to_s, class: 'input', placeholder: 'e.g. tag1, tag2...'
   .file.big-margin-bottom
     %label.file-label
       = f.file_field :image, class: 'file-input'

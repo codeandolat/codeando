@@ -84,6 +84,8 @@ GEM
       thor (~> 0.14)
     font-awesome-rails (4.7.0.4)
       railties (>= 3.2, < 6.0)
+    friendly_id (5.2.4)
+      activerecord (>= 4.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     graphiql-rails (1.4.11)
@@ -247,6 +249,7 @@ DEPENDENCIES
   devise
   figaro
   font-awesome-rails
+  friendly_id (~> 5.2.0)
   graphiql-rails
   graphql
   haml-rails

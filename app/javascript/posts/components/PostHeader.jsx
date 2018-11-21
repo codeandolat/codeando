@@ -16,8 +16,8 @@ class PostHeader extends Component {
                 </p>
               </div>
               <div className="column is-6 tags post-header-tags">
-                {post.tagList.map(tag => (
-                  <span className="tag is-rounded">{tag}</span>
+                {post.tagList.map((tag, index) => (
+                  <span key={index} className="tag is-rounded">{tag}</span>
                 ))}
               </div>
             </div>

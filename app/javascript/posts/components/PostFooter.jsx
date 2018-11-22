@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import { Link } from 'react-router-dom'
 
 import { PostConsumer } from "../contexts/PostContext";
 
@@ -10,9 +9,9 @@ class PostFooter extends Component {
         {({ post }) => (
           <div className="columns post-footer">
             <div className="column is-6">
-              <Link to={`/posts/${post.slug}`} className="button is-rounded is-outlined is-success">
+              <a href={`/posts/${post.slug}`} className="button is-rounded is-outlined is-success">
                 Read More
-              </Link>
+              </a>
             </div>
             <div className="column is-6 post-footer-icons">
               <div className="post-footer-item">

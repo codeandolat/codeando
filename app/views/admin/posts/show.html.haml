@@ -1,6 +1,7 @@
-.has-text-right
-  = link_to 'Back', admin_posts_path, class: 'button is-link is-outlined'
+.buttons.right-justify-content
+  = state_button(@post)
   = link_to 'Edit', edit_admin_post_path(@post), class: 'button is-info is-outlined'
+  = link_to 'Back', admin_posts_path, class: 'button is-outlined'
 .columns.big-margin-top.post
   .column.is-6.post-title-container.has-text-left
     %h2.title.is-2= @post.title
@@ -15,7 +16,7 @@
     - if @post.image.attached?
       = image_tag @post.image.variant(resize: "500x400")
 .container.is-marginless.is-fluid.big-margin-top
-  = @post.content.html_safe
+  = @post&.content&.html_safe
 .is-flex.written-by.big-margin-top.big-margin-bottom.has-text-centered
   %figure.image.is-128x128
     %img.is-rounded{src: 'https://bulma.io/images/placeholders/128x128.png'}

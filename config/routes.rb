@@ -10,7 +10,13 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '/', to: 'home#index'
-    resources :posts
+    resources :posts do
+      member do
+        post :verify
+        post :publish
+        post :deprecate
+      end
+    end
     resources :users, only: [:index]
   end
 

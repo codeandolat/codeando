@@ -1,5 +1,5 @@
 class Admin::PostsController < Admin::BaseController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :verify, :publish, :deprecate]
 
   # GET /posts
   # GET /posts.json
@@ -59,6 +59,26 @@ class Admin::PostsController < Admin::BaseController
       format.html { redirect_to admin_posts_url, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def verify
+    if !@post.content.present? || !@post.image.attached?
+      @post.reject!
+      redirect_to [:admin, @post], alert: 'Post was rejected!, review it again please!.'
+    else
+      @post.verify!
+      redirect_to [:admin, @post], notice: 'You can publish the post right now!'
+    end
+  end
+
+  def publish
+    @post.publish!
+    redirect_to [:admin, @post], notice: 'CONGRATULATIONS!, your post is published!'
+  end
+
+  def deprecate
+    @post.deprecate!
+    redirect_to [:admin, @post], notice: 'Post has been deprecated!'
   end
 
   private

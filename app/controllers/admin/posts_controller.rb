@@ -62,23 +62,15 @@ class Admin::PostsController < Admin::BaseController
   end
 
   def verify
-    if !@post.content.present? || !@post.image.attached?
-      @post.reject!
-      redirect_to [:admin, @post], alert: 'Post was rejected!, review it again please!.'
-    else
-      @post.verify!
-      redirect_to [:admin, @post], notice: 'You can publish the post right now!'
-    end
+    run_transition('verify')
   end
 
   def publish
-    @post.publish!
-    redirect_to [:admin, @post], notice: 'CONGRATULATIONS!, your post is published!'
+    run_transition('publish')
   end
 
   def deprecate
-    @post.deprecate!
-    redirect_to [:admin, @post], notice: 'Post has been deprecated!'
+    run_transition('deprecate')
   end
 
   private
@@ -90,5 +82,36 @@ class Admin::PostsController < Admin::BaseController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:title, :subtitle, :content, :image, :tag_list)
+    end
+
+    def run_transition(state)
+      case state
+      when 'verify'
+        verify_post
+      when 'publish'
+        if @post.publish!
+          redirect_to [:admin, @post], notice: 'CONGRATULATIONS!, your post is published!'
+        end
+      when 'deprecate'
+        if @post.deprecate!
+          redirect_to [:admin, @post], notice: 'Post has been deprecated!'
+        end
+      else
+        redirect_to [:admin, @post], notice: 'That transition does not exist!'
+      end
+    end
+
+    def verify_post
+      begin
+        if @post.verify!
+          redirect_to [:admin, @post], notice: 'You can publish the post right now!'
+        end
+      rescue AASM::InvalidTransition
+        if !@post.rejected? && @post.reject!
+          redirect_to [:admin, @post], alert: 'Post was rejected!, missing post data.'
+        else
+          redirect_to [:admin, @post], alert: 'Missing post data, review again please!'
+        end
+      end
     end
 end

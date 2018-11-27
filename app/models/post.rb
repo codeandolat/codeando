@@ -21,7 +21,7 @@ class Post < ApplicationRecord
     state :rejected
 
     event :verify do
-      transitions from: [:draft, :rejected], to: :verified
+      transitions from: [:draft, :rejected], to: :verified, guard: :post_completed?
     end
 
     event :reject do
@@ -35,6 +35,10 @@ class Post < ApplicationRecord
     event :deprecate do
       transitions from: :published, to: :draft
     end
+  end
+
+  def post_completed?
+    content.present? && image.attached?
   end
 
   private

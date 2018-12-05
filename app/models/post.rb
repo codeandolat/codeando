@@ -38,7 +38,7 @@ class Post < ApplicationRecord
   end
 
   def post_completed?
-    content.present? && image.attached?
+    content.present?
   end
 
   private

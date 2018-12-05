@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-import Post from "./Post";
+import PostContainer from "./PostContainer";
 
 class App extends Component {
   render() {
-    return <Post />;
+    return <PostContainer />;
   }
 }
 export default App

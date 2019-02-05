@@ -82,5 +82,3 @@ test:
 production:
   <<: *default
   database: codeando_production
-  username: codeando
-  password: <%= ENV['CODEANDO_DATABASE_PASSWORD'] %>

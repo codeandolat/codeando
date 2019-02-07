@@ -11,6 +11,12 @@
     img {
       border-radius: 50%;
     }
+
+    img.me-avatar {
+      height: 128px;
+      object-fit: cover;
+      width: 128px;
+    }
   }
 }
 

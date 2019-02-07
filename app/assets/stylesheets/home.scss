@@ -1,21 +1,27 @@
 .sidebar-personal-info {
-  .card-image {
-    figure {
-      align-items: center;
-      flex-direction: column;
-      justify-content: center;
-      margin: 0 auto;
-      margin-top: 15px;
-    }
+  figure.image {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 15px;
 
     img {
       border-radius: 50%;
     }
-
-    img.me-avatar {
-      height: 128px;
-      object-fit: cover;
-      width: 128px;
+  
+    img {
+      &.me-avatar {
+        height: 128px;
+        object-fit: cover;
+        width: 128px;
+      }
+  
+      &.big-me-avatar {
+        height: 256px;
+        object-fit: cover;
+        width: 256px;
+      }
     }
   }
 }

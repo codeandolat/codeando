@@ -14,15 +14,13 @@
         .navbar-item
           - if user_signed_in? && current_user.admin
             = link_to admin_path do
-              = fa_icon 'cog'
+              = fa_icon 'wrench'
         .navbar-item
           = link_to 'Home', root_path
         .navbar-item
-          = link_to 'About me', root_path
+          = link_to 'About me', '/pages/about'
         .navbar-item
           = link_to 'Blog', root_path
-        .navbar-item
-          = link_to 'Contact', root_path
         .navbar-item
           - if user_signed_in?
             = link_to destroy_user_session_path, method: :delete do

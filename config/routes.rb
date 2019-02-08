@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
   resources :posts, only: [:show]
   get '/pages/:page', to: 'pages#show'
+  get '/blog', to: 'blog#index', as: :blog_page
 
   if Rails.env.development?
     mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { PostConsumer } from "../contexts/PostContext";
+import { PostConsumer } from "../../contexts/PostContext";
 
 class PostContent extends Component {
   render() {

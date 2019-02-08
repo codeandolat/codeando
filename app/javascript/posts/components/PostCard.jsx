@@ -4,7 +4,7 @@ import PostHeader from './PostHeader';
 import PostContent from './PostContent';
 import PostFooter from './PostFooter';
 
-import { PostProvider } from '../contexts/PostContext';
+import { PostProvider } from '../../contexts/PostContext';
 
 class PostCard extends Component {
   constructor(props) {

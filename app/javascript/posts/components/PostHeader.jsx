@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import TimeAgo from 'react-timeago'
 
-import { PostConsumer } from '../contexts/PostContext'
+import { PostConsumer } from '../../contexts/PostContext'
 
 class PostHeader extends Component {
   render() {

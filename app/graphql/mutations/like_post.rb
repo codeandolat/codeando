@@ -1,5 +1,17 @@
 module Mutations
   class LikePost < GraphQL::Schema::RelayClassicMutation
+    # Example
+    # mutation {
+    #   likePost(input: {
+    #     slug: "slug-blog"
+    #   }) {
+    #     post{
+    #       id
+    #       title
+    #     }
+    #   }
+    # }
+
     # return type
     field :post, Types::PostType, null: false
 

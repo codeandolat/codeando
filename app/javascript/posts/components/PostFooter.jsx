@@ -13,7 +13,7 @@ class PostFooter extends Component {
                 Read More
               </a>
             </div>
-            <div className="column is-6 post-footer-icons">
+            {/*  <div className="column is-6 post-footer-icons">
               <div className="post-footer-item">
                 <i className="fa fa-comment-o is-size-4"></i>
                 <span className="count">7</span>
@@ -22,7 +22,7 @@ class PostFooter extends Component {
                 <i className="fa fa-heart is-size-4"></i>
                 <span className="count">10</span>
               </div>
-            </div>
+            </div> */}
           </div>
         )}
       </PostConsumer>

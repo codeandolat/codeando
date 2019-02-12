@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
   acts_as_paranoid
   acts_as_taggable
+  acts_as_votable
   has_one_attached :image
 
   include AASM

@@ -1,0 +1,7 @@
+%section.section
+  .container
+    %h1.title.is-2 Playlists
+    .columns.is-multiline
+      - @playlists.each do |playlist|
+        .column.is-6
+          = render 'shared/playlist_card', playlist: playlist

@@ -1,0 +1,12 @@
+.card
+  .card-content
+    .columns
+      .column.is-5
+        %img{src: video.thumbnail_url(size = :medium)}
+      .column
+        %h6.title.is-6.medium-margin-bottom= video.snippet.title
+        %p.is-size-7.medium-margin-bottom
+          Created 
+          = time_ago_in_words(video.published_at, include_seconds: true) 
+          ago
+        %a.button.is-rounded.is-outlined.is-success{href: "https://www.youtube.com/watch?v=#{video.video_id}&list=#{video.playlist_id}&index=#{video.position}", target: '_blank'} Watch it

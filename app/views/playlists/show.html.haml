@@ -1,0 +1,7 @@
+%section.section
+  .container
+    %h1.title.is-2= @playlist.title
+    .columns.is-multiline
+      - @playlist.playlist_items.each do |video|
+        .column.is-half
+          = render 'shared/video_card', video: video

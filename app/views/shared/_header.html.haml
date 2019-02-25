@@ -18,9 +18,11 @@
         .navbar-item
           = link_to 'Home', root_path
         .navbar-item
+          = link_to 'Blog', blog_page_path
+        .navbar-item
+          = link_to 'Tutorials', playlists_page_path
+        .navbar-item
           = link_to 'About me', '/pages/about'
-        -# .navbar-item
-        -#   = link_to 'Blog', blog_page_path
         .navbar-item
           - if user_signed_in?
             = link_to destroy_user_session_path, method: :delete do

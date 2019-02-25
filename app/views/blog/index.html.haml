@@ -1,6 +1,10 @@
 %section.section
   .container
     .columns
-      .column
+      .column.is-two-thirds
         #posts
         = javascript_pack_tag 'posts'
+      .column
+        = render 'shared/more_visited'
+        .big-margin-top
+          = render 'shared/tags_list'

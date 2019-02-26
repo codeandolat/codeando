@@ -3,5 +3,5 @@
     %h1.title.is-2 Playlists
     .columns.is-multiline
       - @playlists.each do |playlist|
-        .column.is-6
+        .column.is-half-desktop.is-full-tablet
           = render 'shared/playlist_card', playlist: playlist

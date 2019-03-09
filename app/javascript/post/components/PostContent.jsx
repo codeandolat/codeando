@@ -7,7 +7,14 @@ class PostContent extends Component {
     return (
       <PostConsumer>
         {({ post }) => (
-          <div className="post-content" dangerouslySetInnerHTML={{ __html: post.content }} />
+          <React.Fragment>
+            {post.content &&
+              <div className="post-content" dangerouslySetInnerHTML={{ __html: post.content }} />
+            }
+            {post.youtubeId &&
+              <iframe className="post-video" src={`https://www.youtube.com/embed/${post.youtubeId}?rel=0&autoplay=1`} frameBorder='0' allowFullScreen></iframe>
+            }
+          </React.Fragment>
         )}
       </PostConsumer>
     )

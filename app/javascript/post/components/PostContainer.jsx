@@ -14,13 +14,10 @@ const GET_POST = gql`
       title
       subtitle
       content
+      youtubeId
       imageUrl
-      tagList
       slug
       createdAt
-      author {
-        email
-      }
     }
   }
 `;

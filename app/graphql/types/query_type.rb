@@ -6,7 +6,7 @@ module Types
     field :posts, [Types::PostType], null: false,
       description: "List all posts"
     def posts
-      Post.all.published
+      Post.all.last_published
     end
 
     field :post, Types::PostType, null: false do

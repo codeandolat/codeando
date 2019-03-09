@@ -14,6 +14,7 @@ class Post < ApplicationRecord
   belongs_to :author, class_name: 'User', foreign_key: 'user_id', counter_cache: true
 
   scope :published, -> { where(state: 'published') }
+  scope :last_published, -> { published.order(created_at: :desc) }
 
   aasm column: 'state' do
     state :draft, initial: true
@@ -39,7 +40,7 @@ class Post < ApplicationRecord
   end
 
   def post_completed?
-    content.present?
+    content.present? || youtube_id.present?
   end
 
   private

@@ -25,6 +25,10 @@
           = fa_icon 'upload'
         %span.file-label Choose a file…
   .field
+    = f.label 'Youtube ID', class: 'label'
+    .control
+      = f.text_area :youtube_id, class: 'input'
+  .field
     = f.label :content, class: 'label'
     .control
       = f.text_area :content, class: 'textarea tinymce', rows: 10, cols: 120

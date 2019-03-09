@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_12_033124) do
+ActiveRecord::Schema.define(version: 2019_02_28_031640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2019_02_12_033124) do
     t.text "subtitle", default: "", null: false
     t.string "slug", default: "", null: false
     t.string "state"
+    t.string "youtube_id"
     t.index ["deleted_at"], name: "index_posts_on_deleted_at"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end

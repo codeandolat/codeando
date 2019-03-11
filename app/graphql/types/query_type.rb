@@ -13,6 +13,8 @@ module Types
         Post.last_published
       when 'blog'
         Post.without_videos
+      when 'tutorials'
+        Post.only_videos
       else
         Post.all.last_published
       end

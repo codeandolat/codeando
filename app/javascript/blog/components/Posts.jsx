@@ -6,7 +6,7 @@ import PostCard from '../../shared/components/PostCard';
 import PostLoading from '../../shared/components/PostLoading';
 
 const VARIABLES = {
-  postsType: "all"
+  postsType: "blog"
 };
 
 const GET_POSTS = gql`
@@ -30,7 +30,7 @@ const Posts = () => {
     <Query query={GET_POSTS} variables={VARIABLES}>
       {({ loading, error, data: { posts } }) => {
         if (loading) {
-          return(
+          return (
             <div>
               <PostLoading />
               <PostLoading />
@@ -39,11 +39,11 @@ const Posts = () => {
           )
         }
         if (error) return `Error: ${error.message}`;
-  
+
         return (
           <React.Fragment>
             {posts.map(post => (
-              <PostCard key={post.id} post={post}/>
+              <PostCard key={post.id} post={post} />
             ))}
           </React.Fragment>
         );

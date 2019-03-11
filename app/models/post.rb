@@ -15,7 +15,8 @@ class Post < ApplicationRecord
 
   scope :published, -> { where(state: 'published') }
   scope :last_published, -> { published.order(created_at: :desc) }
-  scope :without_videos, -> { where(youtube_id: nil).order(created_at: :desc) }
+  scope :without_videos, -> { last_published.where(youtube_id: nil) }
+  scope :only_videos, -> { last_published.where.not(youtube_id: nil) }
 
   aasm column: 'state' do
     state :draft, initial: true

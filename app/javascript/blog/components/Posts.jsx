@@ -1,29 +1,13 @@
 import React from 'react';
-import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 
 import PostCard from '../../shared/components/PostCard';
 import PostLoading from '../../shared/components/PostLoading';
+import { GET_POSTS } from '../../shared/get_posts'
 
 const VARIABLES = {
   postsType: "blog"
 };
-
-const GET_POSTS = gql`
-  query ($postsType: String!) {
-    posts(postsType: $postsType) {
-      id
-      title
-      subtitle
-      createdAt
-      tagList
-      slug
-      author {
-        email
-      }
-    }
-  }
-`;
 
 const Posts = () => {
   return (

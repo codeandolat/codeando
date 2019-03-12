@@ -18,7 +18,7 @@ class PostCard extends Component {
   render() {
     return (
       <PostProvider value={{ post: this.state.post}}>
-        <div className="card big-margin-bottom big-green-border-left rounded-borders">
+        <div className={"card big-margin-bottom rounded-borders " + (this.state.post.youtubeId ? 'big-red-border-left' : 'big-blue-border-left')}>
           <PostHeader />
           <div className="card-content">
             <PostContent />

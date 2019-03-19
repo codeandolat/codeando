@@ -3,6 +3,7 @@ import { Query } from 'react-apollo';
 
 import PostCard from '../../shared/components/PostCard';
 import PostLoading from '../../shared/components/PostLoading';
+import LoadMore from '../../shared/components/LoadMore';
 import { GET_POSTS } from '../../shared/get_posts'
 
 const VARIABLES = {
@@ -12,7 +13,7 @@ const VARIABLES = {
 const Posts = () => {
   return (
     <Query query={GET_POSTS} variables={VARIABLES}>
-      {({ loading, error, data: { posts } }) => {
+      {({ loading, error, data: { postsConnection }, fetchMore }) => {
         if (loading) {
           return(
             <div>
@@ -26,9 +27,12 @@ const Posts = () => {
   
         return (
           <React.Fragment>
-            {posts.map(post => (
-              <PostCard key={post.id} post={post}/>
+            {postsConnection.edges.map(({ node }) => (
+              <PostCard key={node.id} post={node} />
             ))}
+            {postsConnection.pageInfo.hasNextPage && (
+              <LoadMore postsConnection={postsConnection} fetchMore={fetchMore} />
+            )}
           </React.Fragment>
         );
       }}

@@ -8,16 +8,15 @@ module Types
     end
 
     def posts(posts_type:)
-      case posts_type
-      when 'all'
-        Post.last_published
-      when 'blog'
-        Post.without_videos
-      when 'tutorials'
-        Post.only_videos
-      else
-        Post.all.last_published
-      end
+      get_posts(posts_type)
+    end
+
+    field :posts_connection, Types::PostType.connection_type, null: false do
+      argument :posts_type, String, required: true
+    end
+
+    def posts_connection(posts_type:, **_args)
+      get_posts(posts_type)
     end
 
     field :post, Types::PostType, null: false do
@@ -26,6 +25,21 @@ module Types
 
     def post(id:)
       Post.find(id)
+    end
+
+    private
+
+    def get_posts(posts_type)
+      case posts_type
+      when 'all'
+        Post.eager_loading.last_published
+      when 'blog'
+        Post.eager_loading.without_videos
+      when 'tutorials'
+        Post.eager_loading.only_videos
+      else
+        Post.eager_loading.last_published
+      end
     end
   end
 end

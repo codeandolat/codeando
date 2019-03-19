@@ -17,6 +17,7 @@ class Post < ApplicationRecord
   scope :last_published, -> { published.order(created_at: :desc) }
   scope :without_videos, -> { last_published.where(youtube_id: nil) }
   scope :only_videos, -> { last_published.where.not(youtube_id: nil) }
+  scope :eager_loading, -> { eager_load({taggings: :tag}, :tags, :author) }
 
   aasm column: 'state' do
     state :draft, initial: true

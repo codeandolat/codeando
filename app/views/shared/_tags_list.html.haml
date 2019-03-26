@@ -6,3 +6,5 @@
       - @tags.each do |tag|
         %li.tags-item
           = link_to tag.name, blog_page_path(tag: tag.name), class: "tag tag-size-#{tag.taggings_count}"
+  .card-footer
+    = link_to 'Show all', blog_page_path, class: 'card-footer-item'

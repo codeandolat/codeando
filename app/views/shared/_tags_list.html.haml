@@ -5,6 +5,12 @@
     %ul.tags.is-flex
       - @tags.each do |tag|
         %li.tags-item
-          = link_to tag.name, blog_page_path(tag: tag.name), class: "tag tag-size-#{tag.taggings_count}"
+          - if controller.controller_name == 'blog'
+            = link_to tag.name, blog_page_path(tag: tag.name), class: "tag tag-size-#{tag.taggings_count}"
+          - else
+            = link_to tag.name, tutorials_page_path(tag: tag.name), class: "tag tag-size-#{tag.taggings_count}"
   .card-footer
-    = link_to 'Show all', blog_page_path, class: 'card-footer-item'
+    - if controller.controller_name == 'blog'
+      = link_to 'Show all', blog_page_path, class: 'card-footer-item'
+    - else
+      = link_to 'Show all', tutorials_page_path, class: 'card-footer-item'

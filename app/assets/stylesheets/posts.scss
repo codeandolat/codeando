@@ -67,6 +67,9 @@
 }
 
 .tags {
-  justify-content: space-between;
-  margin-right: 5px;
+  justify-content: start;
+
+  .tags-item {
+    margin-right: 10px;
+  }
 }

@@ -5,6 +5,4 @@
         #tutorials
         = javascript_pack_tag 'tutorials'
       .column
-        = render 'shared/more_visited'
-        .big-margin-top
-          = render 'shared/tags_list'
+        = render 'shared/tags_list', tags: @tags

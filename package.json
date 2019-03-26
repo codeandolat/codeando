@@ -16,6 +16,7 @@
     "react-timeago": "^4.1.9"
   },
   "devDependencies": {
-    "webpack-dev-server": "2.11.2"
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "3.0.0"
   }
 }

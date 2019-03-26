@@ -1,5 +1,5 @@
 class BlogController < ApplicationController
   def index
-    @tags = Post.tag_counts_on(:tags)
+    @tags = Post.without_videos.tag_counts_on(:tags)
   end
 end

@@ -2,4 +2,7 @@
   %header.card-header
     %p.card-header-title Tags
   .card-content
-    %p Coming soon...
+    %ul.tags.is-flex
+      - @tags.each do |tag|
+        %li.tags-item
+          = link_to tag.name, blog_page_path(tag: tag.name), class: "tag tag-size-#{tag.taggings_count}"

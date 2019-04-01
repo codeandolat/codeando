@@ -9,11 +9,11 @@
     = javascript_include_tag 'admin', 'data-turbolinks-track': 'reload'
     = favicon_link_tag asset_path('favicon.ico'), :rel => 'icon', :type => "image/x-icon"
   %body
-    = render 'shared/admin_header'
-    .wrapper.full-height
-      .columns.full-height
-        %aside.column.is-2.aside
-          = render 'shared/admin_sidebar'
-        %main.column.main.is-8.is-offset-1
-          = render 'shared/flash_messages'
-          = yield
+    #admin-app
+      = render 'shared/admin_header'
+      %section.main-content.columns.is-fullheight
+        = render 'shared/admin_sidebar'
+        .container.column.is-10
+          .section
+            = render 'shared/flash_messages'
+            = yield

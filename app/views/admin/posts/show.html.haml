@@ -2,26 +2,21 @@
   = state_button(@post)
   = link_to 'Edit', edit_admin_post_path(@post), class: 'button is-info is-outlined'
   = link_to 'Back', admin_posts_path, class: 'button is-outlined'
-.columns.big-margin-top.post
-  .column.post-title-container.has-text-left{class: @post.image.attached? ? 'is-6' : 'is-12'}
-    %h2.title.is-2= @post.title
-    %p.subtitle.is-5= "#{truncate(@post.subtitle, length: 100)}"
-    .is-flex.author.has-left-text.medium-margin-top
-      %figure.image.is-64x64
-        %img.is-rounded{src: 'https://bulma.io/images/placeholders/64x64.png'}
-      .info
-        %p.name David Sanchez
-        %p.date published #{time_ago_in_words(@post.created_at)} ago
-  - if @post.image.attached?
-    .column.is-6.has-text-right
-      = image_tag @post.image.variant(resize: "500x400")
-.container.is-marginless.is-fluid.big-margin-top
-  - if !@post.content.empty?
-    = @post&.content&.html_safe
-  - elsif @post.youtube_id
-    %iframe.youtube-video{src: "https://www.youtube.com/embed/#{@post.youtube_id}?rel=0&autoplay=1", frameborder: '0', allowfullscreen: true}
-.is-flex.written-by.big-margin-top.big-margin-bottom.has-text-centered
-  %figure.image.is-128x128
-    %img.is-rounded{src: 'https://bulma.io/images/placeholders/128x128.png'}
-  .info
-    %p.name David Sanchez
+.post-container
+  .columns.big-margin-top.post
+    .column.post-title-container.has-text-left{class: @post.image.attached? ? 'is-6' : 'is-12'}
+      %h2.title.is-2= @post.title
+      .is-flex.author.has-left-text.medium-margin-top
+        %figure.image.is-64x64
+          %img.is-rounded{src: 'https://bulma.io/images/placeholders/64x64.png'}
+        .info
+          %p.name David Sanchez
+          %p.date published #{time_ago_in_words(@post.created_at)} ago
+    - if @post.image.attached?
+      .column.is-6.has-text-right
+        = image_tag @post.image.variant(resize: "500x400")
+  .container.is-marginless.is-fluid.big-margin-top
+    - if !@post.content.empty?
+      = @post&.content&.html_safe
+    - elsif @post.youtube_id
+      %iframe.youtube-video{src: "https://www.youtube.com/embed/#{@post.youtube_id}?rel=0&autoplay=1", frameborder: '0', allowfullscreen: true}

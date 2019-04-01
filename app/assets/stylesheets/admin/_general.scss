@@ -1,0 +1,21 @@
+html, body, #app {
+  height: 100%;
+}
+
+#app {
+  min-height: 100%;
+}
+
+.navbar.navbar-admin {
+  box-shadow: 0 0 0 2px rgba(10,10,10,.2);
+}
+
+.table {
+  background-color: $gallery;
+}
+
+@media screen and (max-width: 768px) {
+  #menu-toggle:checked + .nav-menu {
+    display: block;
+  }
+}

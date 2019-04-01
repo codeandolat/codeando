@@ -1,15 +1,13 @@
-%nav.navbar.is-fixed-top(role="navigation" aria-label="main navigation")
+%nav.navbar.navbar-codeando.is-fixed-top(role="navigation" aria-label="main navigation")
   .container
     .navbar-brand
       %a.navbar-item(href="/")
         = image_tag 'codeando-green-logo.png', class: 'logo'
-
-      %button.button.navbar-burger
-        %span
-        %span
-        %span
-
-    .navbar-menu
+      %a.navbar-burger.burger{"aria-expanded" => "false", "aria-label" => "menu", "data-target" => "menu", :role => "button"}
+        %span{"aria-hidden" => "true"}
+        %span{"aria-hidden" => "true"}
+        %span{"aria-hidden" => "true"}
+    #menu.navbar-menu
       .navbar-end
         .navbar-item
           - if user_signed_in? && current_user.admin

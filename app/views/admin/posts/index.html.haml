@@ -3,7 +3,6 @@
 %table.table.is-striped.is-fullwidth
   %thead
     %tr
-      %th User
       %th Title
       %th Created at
       %th State
@@ -14,7 +13,6 @@
   %tbody
     - @posts.each do |post|
       %tr
-        %td= post.author.email
         %td= post.title
         %td
           #{time_ago_in_words(post.created_at)} ago

@@ -1,30 +1,15 @@
-%header
-  %nav.navbar.has-shadow{"aria-label" => "main navigation", :role => "navigation"}
-    .navbar-brand
-      %a.navbar-item(href='/')
-        = image_tag 'codeando-green-logo.png', class: 'navbar-brand-logo', alt: 'Codeando logo'
-      %button.button.navbar-burger{"data-target" => "navMenu"}
-        %span
-        %span
-        %span
-    #navMenu.navbar-menu.navbar-end
-      %a.navbar-item.is-tab.is-hidden-tablet.is-active Home
-      %a.navbar-item.nav-tag
-        %span.icon.is-small
-          %i.fa.fa-envelope-o
-        %span.tag.is-primary.tag-notif 0
-      .navbar-item.has-dropdown.is-hoverable
-        %a.navbar-link
-          %figure.image.is-32x32{:style => "margin-right:.5em;"}
-            = image_tag 'me', alt: 'Me'
-          David
-        .navbar-dropdown.is-right
-          %a.navbar-item
-            %span.icon.is-small
-              %i.fa.fa-user-o
-            Profile
-          %hr.navbar-divider/
-          %a.navbar-item
-            %span.icon.is-small
-              %i.fa.fa-power-off
-            Logout
+%nav.navbar.navbar-admin{"aria-label" => "main navigation", :role => "navigation"}
+  .navbar-brand
+    %a.navbar-item{:href => "/"}
+      = image_tag 'codeando-green-logo.png', class: 'logo'
+    %a.navbar-burger.burger{"aria-expanded" => "false", "aria-label" => "menu", "data-target" => "navbarBasicExample", :role => "button"}
+      %span{"aria-hidden" => "true"}
+      %span{"aria-hidden" => "true"}
+      %span{"aria-hidden" => "true"}
+  #navbarBasicExample.navbar-menu
+    .navbar-start
+      %a.navbar-item
+        Home
+    .navbar-end
+      = link_to destroy_user_session_path, method: :delete, class: 'navbar-item' do
+        Log out

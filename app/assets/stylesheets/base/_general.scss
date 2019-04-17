@@ -1,5 +1,5 @@
 html, body {
-  background-color: $gallery;
+  background-color: $wild-sand;
   height: 100%;
   width: 100%;
 }
@@ -36,11 +36,16 @@ body#main-body {
 
     &:hover {
       color: $sea-green;
-      &:before {
-        visibility: visible;
-        -webkit-transform: scaleX(1);
-        transform: scaleX(1);
-      }
+    }
+  }
+
+  .navbar-item a.active {
+    color: $sea-green !important;
+
+    &:before {
+      visibility: visible;
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
     }
   }
 

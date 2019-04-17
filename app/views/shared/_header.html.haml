@@ -14,13 +14,13 @@
             = link_to admin_path do
               = fa_icon 'wrench'
         .navbar-item
-          = link_to 'Home', root_path
+          = link_to 'Home', root_path, class: current_class?(root_path)
         .navbar-item
-          = link_to 'Blog', blog_page_path
+          = link_to 'Blog', blog_page_path, class: current_class?(blog_page_path)
         .navbar-item
-          = link_to 'Tutorials', tutorials_page_path
+          = link_to 'Tutorials', tutorials_page_path, class: current_class?(tutorials_page_path)
         .navbar-item
-          = link_to 'About me', '/pages/about'
+          = link_to 'About me', '/pages/about', class: current_class?('/pages/about')
         .navbar-item
           - if user_signed_in?
             = link_to destroy_user_session_path, method: :delete do

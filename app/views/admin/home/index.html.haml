@@ -1,1 +1,25 @@
-%h1 Admin Home
+%section.hero.is-info.is-small
+  .hero-body
+    .container
+      %h1.title Hello, #{current_user.email}
+      %h2.subtitle I hope you are having a great day!
+%section.info-tiles
+  .columns
+    .column.is-4
+      .tile.is-ancestor.has-text-centered
+        .tile.is-parent
+          %article.tile.is-child.box
+            %p.title= @posts.published.count
+            %p.subtitle Published Posts
+    .column.is-4
+      .tile.is-ancestor.has-text-centered
+        .tile.is-parent
+          %article.tile.is-child.box
+            %p.title= @posts.count
+            %p.subtitle All Posts
+    .column.is-4
+      .tile.is-ancestor.has-text-centered
+        .tile.is-parent
+          %article.tile.is-child.box
+            %p.title= @users.count
+            %p.subtitle Users

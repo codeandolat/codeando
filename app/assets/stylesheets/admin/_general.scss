@@ -2,8 +2,12 @@ html, body, #app {
   height: 100%;
 }
 
-#app {
+#admin-app {
   min-height: 100%;
+
+  .main-content {
+    min-height: 100%;
+  }
 }
 
 .navbar.navbar-admin {
@@ -12,6 +16,21 @@ html, body, #app {
 
 .table {
   background-color: $gallery;
+}
+
+.info-tiles {
+  margin: 1rem 0;
+
+  .tile {
+    align-items: stretch;
+    display: block;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-height: -webkit-min-content;
+    min-height: -moz-min-content;
+    min-height: min-content;
+  }
 }
 
 @media screen and (max-width: 768px) {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Helmet } from 'react-helmet'
 
 import { PostProvider } from '../../contexts/PostContext';
 import PostHeader from './PostHeader'
@@ -16,6 +17,14 @@ class Post extends Component {
   render() {
     return(
       <PostProvider value={{ post: this.state.post }}>
+        <Helmet>
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:description" content={this.state.post.subtitle} />
+          <meta name="twitter:title" content={this.state.post.title} />
+          <meta name="twitter:site" content="@codeando" />
+          <meta name="twitter:image" content="https://code-ando.com/assets/avatar.png" />
+          <meta name="twitter:creator" content="@Sanchezdav" />
+        </Helmet>
         <div className="container post post-container">
           <div className="columns">
             <PostHeader />
